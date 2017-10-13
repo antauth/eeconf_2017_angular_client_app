@@ -19,7 +19,6 @@ export class NotificationBadgeComponent {
   }
 
 	ngOnInit() {
-
   		this.notifierService
   			.getMessage()
   			.subscribe(comment => {
