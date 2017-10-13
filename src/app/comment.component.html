@@ -1,0 +1,14 @@
+<!-- modeled after our comment template in EE -->
+<div *ngFor="let comment of comments" class="comment animate fade-in">
+  <section class="row">
+    <section class="w-12">
+      {{ comment.comment }}
+    </section>
+    <section class="w-4">
+      <h3>{{ comment.author }}</h3>
+      <p>on {{ comment.date | date:'shortDate' }} <br>
+        <span *ngIf="comment.location">from {{ comment.location }}</span>
+      </p>
+    </section>
+  </section>
+</div>
