@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NotifierService } from './notifier.service';
 
@@ -10,13 +10,13 @@ import { NotifierService } from './notifier.service';
 })
 export class CommentComponent {
 	comments: Array<any> = []
-  entryId: any
+  @Input() entryId: any
 
 	constructor(private notifierService: NotifierService) {}
 
 	ngOnInit() {
   		this.notifierService
-  			.getMessage(11)
+  			.getMessage(this.entryId)
   			.subscribe(comment => {
   				this.comments.push(comment);
   			});
