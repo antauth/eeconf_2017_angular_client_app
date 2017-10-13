@@ -8,7 +8,7 @@ import { NotificationBadgeComponent } from './notification-badge.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:8186', options: {} };
+const config: SocketIoConfig = { url: (<any>window).notifier_server_url, options: {} };
 
 /**
  * NgModule is a contains components and services
